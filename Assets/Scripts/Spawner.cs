@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour {
 
 	//Creates new objects in front of player model on trigger
 	void OnTriggerEnter(Collider Player){
-		Vector3 pos = new Vector3(1, 0, 9);
+		Vector3 pos = new Vector3(1, 0, 50);
 		var playerZ = GameObject.Find ("Player").transform.position.z;
 		Vector3 finalPos = pos + new Vector3 (0, 0, playerZ);
 		Instantiate (Path, finalPos, Quaternion.identity);

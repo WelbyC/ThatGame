@@ -27,7 +27,7 @@ public class PlayerController2 : MonoBehaviour
         controller.DetectInputDirection();
 
         // Goes in Horizontal Direction -- Not going up or down  --- Going forward with 5 units of power.
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontal, vertical, 5);
+        GetComponent<Rigidbody>().velocity = new Vector3(horizontal, vertical, 6);
 
         if (controller.direction == InputDirection.Right)
         {
@@ -57,7 +57,7 @@ public class PlayerController2 : MonoBehaviour
     {
         yield return new WaitForSeconds(.2f);
         horizontal = 0;
-        vertical = 0;
+        vertical = -5;
 
         // Resets Direction -- Not needed if you want to constantly go left or right
         controller.direction = InputDirection.None;
@@ -65,7 +65,7 @@ public class PlayerController2 : MonoBehaviour
     IEnumerator stopJump()
     {
         yield return new WaitForSeconds(.25f);
-        vertical = -5;
+		//vertical = -5
         StartCoroutine(stopSlide());
         controller.direction = InputDirection.None;
     }
